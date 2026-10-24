@@ -17,7 +17,39 @@ class CalculatorTest {
     void add_shouldSumTwoIntegers() {
         Calculator c = new Calculator();
         assertEquals(5, c.add(2, 3));
-        // TODO: weitere Grenzfälle (z. B. negative Zahlen)
+    }
+
+    @Test
+    void add_negativeNumbers_shouldReturnNegativeSum() {
+        Calculator c = new Calculator();
+        assertEquals(-8, c.add(-3, -5));
+    }
+
+    @Test
+    void subtract_largerNumber_shouldReturnNegativeDifference() {
+        Calculator c = new Calculator();
+        assertEquals(-5, c.subtract(3, 8));
+    }
+
+    @Test
+    void divide_nonDivisibleNumbers_shouldTruncateTowardsZero() {
+        Calculator c = new Calculator();
+        assertEquals(-3, c.divide(-10, 3));
+    }
+
+    @Test
+    void sum_methods_emptyList_shouldReturnZero() {
+        Calculator c = new Calculator();
+        assertEquals(0, c.sumUp(List.of()));
+        assertEquals(0, c.addAll(List.of()));
+    }
+
+    @Test
+    void sum_methods_withNullsAndNegativeNumbers_shouldReturnExpectedSum() {
+        Calculator c = new Calculator();
+        List<Integer> nums = Arrays.asList(null, -5, 2, null, 10);
+        assertEquals(7, c.sumUp(nums));
+        assertEquals(7, c.addAll(nums));
     }
 
     @Test

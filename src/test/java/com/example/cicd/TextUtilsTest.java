@@ -24,4 +24,19 @@ class TextUtilsTest {
     void isPalindrome_caseInsensitive_expectedTrue() {
         assertTrue(TextUtils.isPalindrome("Anna"));
     }
+
+    @Test
+    void safeParseInt_negativeNumber_returnsValue() {
+        assertEquals(-17, TextUtils.safeParseInt("-17"));
+    }
+
+    @Test
+    void safeParseInt_outOfIntegerRange_returnsZero() {
+        assertEquals(0, TextUtils.safeParseInt("2147483648"));
+    }
+
+    @Test
+    void isPalindrome_null_returnsFalse() {
+        assertFalse(TextUtils.isPalindrome(null));
+    }
 }
