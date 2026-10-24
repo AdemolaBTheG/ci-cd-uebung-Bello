@@ -1,7 +1,8 @@
 # Über mich
 
 - **Name:** Ademola Kevin Bello
-- **Studiengang:** [Offizielle Bezeichnung noch ergänzen]
+- **Studiengang:** MC.ba VZ (WS26)
+- **Lehrveranstaltung:** CI/CD – Continuous Integration / Continuous Delivery
 
 ## Erwartungen an die LV
 
