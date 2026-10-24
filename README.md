@@ -1,5 +1,12 @@
 # CI/CD Übung – Java Basisprojekt (Ü1 mit Anleitungen)
 
+## Übung 1
+
+- Autor: Ademola Kevin Bello
+- Besonderheit: Ich habe bereits Erfahrung mit Git gesammelt und diese durch meine Arbeit weiter vertieft und verfeinert.
+- Zusätzliche Tests: acht neue Unit-Tests für negative Zahlen, Integer-Division, leere Listen, Listen mit `null`-Einträgen, Zahlen außerhalb des Integer-Wertebereichs und `null`-Eingaben.
+- Lokale Prüfung: `mvn -q -DskipTests=false test` führt 14 Tests aus. 13 bestehen; ausschließlich `TextUtilsTest.isPalindrome_caseInsensitive_expectedTrue` schlägt wie für Übung 1 vorgesehen fehl. Der Fehler wird in Übung 2 behoben.
+
 Dieses Repository ist der Startpunkt für **Übung 1** und wird in **allen folgenden Übungen** weiterverwendet
 (CI mit GitHub Actions → SonarCloud → Docker → Security-Scan).
 
