@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'pom.xml'
+      - '.github/workflows/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'pom.xml'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }}, Java ${{ matrix.java }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java: ['17', '21']
+        exclude:
+          # Both operating systems and Java versions remain represented.
+          - os: windows-latest
+            java: '17'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Temurin Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+      - name: Build, test and generate coverage
+        run: mvn --batch-mode --no-transfer-progress -DskipTests=false clean verify
+      - name: Upload Surefire test reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: surefire-${{ matrix.os }}-java-${{ matrix.java }}
+          path: target/surefire-reports/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload JaCoCo coverage
+        if: success()
+        uses: actions/upload-artifact@v7
+        with:
+          name: jacoco-${{ matrix.os }}-java-${{ matrix.java }}
+          path: target/site/jacoco/
+          if-no-files-found: error
+          retention-days: 30
