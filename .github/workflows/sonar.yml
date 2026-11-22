@@ -10,7 +10,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: sonar-${{ github.ref }}
+  # Keep different commits independent so newer pushes cannot replace a queued scan.
+  group: sonar-${{ github.ref }}-${{ github.sha }}
   cancel-in-progress: false
 
 jobs:
