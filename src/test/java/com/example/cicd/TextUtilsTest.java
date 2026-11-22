@@ -3,11 +3,7 @@ package com.example.cicd;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Hinweis:
- * - Dieser Test wird voraussichtlich FAILEN, weil isPalindrome '==' nutzt.
- * - In Uebung 2 sollte dieser Bug gefixt werden.
- */
+/** Regressionstests für die in Übung 2 behobenen Fehler. */
 class TextUtilsTest {
 
     @Test
@@ -38,5 +34,28 @@ class TextUtilsTest {
     @Test
     void isPalindrome_null_returnsFalse() {
         assertFalse(TextUtils.isPalindrome(null));
+    }
+
+    @Test
+    void isPalindrome_nonPalindrome_returnsFalse() {
+        assertFalse(TextUtils.isPalindrome("Java"));
+    }
+
+    @Test
+    void isPalindrome_emptyAndSingleCharacter_returnsTrue() {
+        assertTrue(TextUtils.isPalindrome(""));
+        assertTrue(TextUtils.isPalindrome("a"));
+    }
+
+    @Test
+    void safeParseInt_nullAndEmpty_returnsZero() {
+        assertEquals(0, TextUtils.safeParseInt(null));
+        assertEquals(0, TextUtils.safeParseInt(""));
+    }
+
+    @Test
+    void safeParseInt_integerLimits_returnsValue() {
+        assertEquals(Integer.MIN_VALUE, TextUtils.safeParseInt("-2147483648"));
+        assertEquals(Integer.MAX_VALUE, TextUtils.safeParseInt("2147483647"));
     }
 }

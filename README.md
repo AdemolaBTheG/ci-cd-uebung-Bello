@@ -1,5 +1,18 @@
 # CI/CD Übung – Java Basisprojekt (Ü1 mit Anleitungen)
 
+[![CI](https://github.com/AdemolaBTheG/ci-cd-uebung-Bello/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/AdemolaBTheG/ci-cd-uebung-Bello/actions/workflows/ci.yml)
+
+## Übung 2
+
+- CI: Ubuntu mit Temurin Java 17 und 21 sowie Windows mit Java 21. Windows/Java 17 ist ausgeschlossen, da Java 17 bereits auf Ubuntu und Windows bereits mit Java 21 geprüft wird.
+- `mvn --batch-mode --no-transfer-progress -DskipTests=false clean verify` führt alle 18 Tests aus; es werden keine Tests deaktiviert oder Fehler ignoriert.
+- Pro Matrix-Variante werden Surefire-Testberichte (auch bei Fehlern) und JaCoCo-Coverage als GitHub-Actions-Artefakte gespeichert.
+- Coverage: `target/site/jacoco/index.html` und `target/site/jacoco/jacoco.xml`.
+- Behobene Probleme: Palindromprüfung vergleicht String-Inhalte statt Referenzen; Integer-Parsing fängt gezielt `NumberFormatException` ab und behandelt den Fallback direkt.
+- SonarQube Cloud: eigener Workflow für jeden Push auf `main`, ohne Pfadfilter, mit vollständiger Git-Historie und Quality-Gate-Prüfung. Einrichtung: [docs/sonar-setup.md](docs/sonar-setup.md).
+
+Die folgenden Übung-1-Angaben dokumentieren den damaligen Projektstand. Der absichtliche Palindromfehler ist seit Übung 2 behoben.
+
 ## Übung 1
 
 - Autor: Ademola Kevin Bello
@@ -30,10 +43,7 @@ mvn -q -DskipTests=false test
 ```
 Coverage-Report (für Übung 2 / SonarCloud): `target/site/jacoco/index.html`
 
-> **Hinweis:** `TextUtilsTest` enthält einen bewusst fehlschlagenden Test (`isPalindrome_caseInsensitive_expectedTrue`), der erst in Übung 2 behoben wird. Bis dahin endet `mvn test` mit **1 Failure** und `BUILD FAILURE`, und der Coverage-Report wird nicht erzeugt. Den Report gibt es trotzdem mit:
-> ```bash
-> mvn test -Dmaven.test.failure.ignore=true
-> ```
+> **Stand Übung 2:** Der ursprünglich bewusst fehlschlagende Test `isPalindrome_caseInsensitive_expectedTrue` bleibt erhalten und besteht jetzt. `mvn clean verify` erzeugt die Coverage-Berichte ohne ignorierte Testfehler.
 
 ---
 
