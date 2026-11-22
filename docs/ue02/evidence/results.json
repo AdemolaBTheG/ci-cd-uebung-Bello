@@ -1,0 +1,7 @@
+{
+  "ci_url": "https://github.com/AdemolaBTheG/ci-cd-uebung-Bello/actions/runs/45036729429",
+  "line_coverage": "56.5% (26 von 46 Zeilen)",
+  "sonar_summary": "Verifiziert auf main: Maven-Analyse in GitHub Actions erfolgreich, Quality Gate PASSED. Sonar meldet 0 offene Issues, 57,4% Gesamt-Coverage, 56,5% Zeilen-Coverage und 59,1% Branch-Coverage. Die ursprünglich gemeldete Regelverletzung java:S4973 ist CLOSED / FIXED.",
+  "finding_note": "Einschränkung: Das kostenlose Profil Sonar way core meldete genau ein Finding (java:S4973), das jetzt als behoben bestätigt ist. Die zweite sinnvolle Codekorrektur adressiert java:S2221, wird vom verfügbaren Profil jedoch nicht gemeldet. Ein Wechsel zum umfassenden Profil wurde vom Dienst planbedingt abgelehnt. Zwei serverseitig gemeldete und behobene Findings sind daher nicht belegt.",
+  "sonar_run_url": "https://github.com/AdemolaBTheG/ci-cd-uebung-Bello/actions/runs/45036729475"
+}

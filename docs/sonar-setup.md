@@ -1,5 +1,16 @@
 # SonarQube Cloud einrichten
 
+## Verifizierter Stand vom 22.11.2026
+
+- Projekt: <https://sonarcloud.io/summary/overall?id=AdemolaBTheG_ci-cd-uebung-Bello&branch=main>.
+- Organization Key: `ademolabtheg`; Project Key: `AdemolaBTheG_ci-cd-uebung-Bello`.
+- `SONAR_TOKEN` ist als verschlüsseltes Repository-Secret gespeichert; beide Schlüssel sind Actions-Variablen. Automatic Analysis ist ausgeschaltet.
+- Maven-Analyse auf `main` erfolgreich; Quality Gate bestanden. Coverage: 57,4% gesamt, 56,5% Zeilen, 59,1% Branches.
+- `java:S4973` wurde vor der Korrektur tatsächlich gemeldet und danach als `CLOSED / FIXED` bestätigt.
+- Einschränkung der Aufgabenrubrik: Das kostenlose Profil `Sonar way core` meldet den zweiten behobenen Code-Smell (`java:S2221`) nicht. Der Dienst lehnt die Auswahl des umfassenden Profils auf diesem Plan ab. Zwei sinnvolle Codekorrekturen sind dokumentiert, aber nur ein serverseitig gemeldetes/behobenes Finding ist nachgewiesen. Es wurde kein kostenpflichtiger Plan aktiviert.
+
+## Einrichtungsschritte
+
 1. Mit dem GitHub-Konto `AdemolaBTheG` auf <https://sonarcloud.io> anmelden (EU-Region).
 2. Die GitHub-App nur für `ci-cd-uebung-Bello` installieren und dieses öffentliche Repository in ein kostenloses SonarQube-Cloud-Projekt importieren.
 3. Die tatsächlichen Schlüssel aus den Projektinformationen als GitHub-Actions-Variablen anlegen:

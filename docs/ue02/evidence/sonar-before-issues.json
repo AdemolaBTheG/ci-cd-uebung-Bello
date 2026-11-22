@@ -1,0 +1,10 @@
+{
+  "issues": [
+    {
+      "rule": "java:S4973",
+      "message": "Strings and Boxed types should be compared using \"equals()\".",
+      "status": "OPEN",
+      "line": 8
+    }
+  ]
+}

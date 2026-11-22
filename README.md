@@ -10,6 +10,8 @@
 - Coverage: `target/site/jacoco/index.html` und `target/site/jacoco/jacoco.xml`.
 - Behobene Probleme: Palindromprüfung vergleicht String-Inhalte statt Referenzen; Integer-Parsing fängt gezielt `NumberFormatException` ab und behandelt den Fallback direkt.
 - SonarQube Cloud: eigener Workflow für jeden Push auf `main`, ohne Pfadfilter, mit vollständiger Git-Historie und Quality-Gate-Prüfung. Einrichtung: [docs/sonar-setup.md](docs/sonar-setup.md).
+- Verifiziert am 22.11.2026: drei erfolgreiche Matrix-Jobs, Sonar-Analyse erfolgreich, Quality Gate bestanden und 57,4% Gesamt-Coverage.
+- Abgabebericht mit Screenshots und Vorher-/Nachher-Nachweisen: [UE02-Bericht-Bello.pdf](output/pdf/UE02-Bericht-Bello.pdf). Der Bericht benennt die Einschränkung des kostenlosen Sonar-Core-Profils beim Nachweis eines zweiten Findings.
 
 Die folgenden Übung-1-Angaben dokumentieren den damaligen Projektstand. Der absichtliche Palindromfehler ist seit Übung 2 behoben.
 

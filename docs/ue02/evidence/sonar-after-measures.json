@@ -1,0 +1,40 @@
+{
+  "component": {
+    "id": "AaIDwP9vzDYpeCwXGxde",
+    "key": "AdemolaBTheG_ci-cd-uebung-Bello",
+    "name": "ci-cd-uebung",
+    "description": "CI/CD Übungen: Java, Tests, Coverage und SonarQube Cloud",
+    "qualifier": "TRK",
+    "measures": [
+      {
+        "metric": "coverage",
+        "value": "57.4",
+        "bestValue": false
+      },
+      {
+        "metric": "bugs",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "alert_status",
+        "value": "OK"
+      },
+      {
+        "metric": "code_smells",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "branch_coverage",
+        "value": "59.1",
+        "bestValue": false
+      },
+      {
+        "metric": "line_coverage",
+        "value": "56.5",
+        "bestValue": false
+      }
+    ]
+  }
+}

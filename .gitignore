@@ -1,5 +1,7 @@
 # Maven
 target/
+# Temporary report renderings and browser previews
+tmp/
 # IDE/OS
 *.iml
 .idea/

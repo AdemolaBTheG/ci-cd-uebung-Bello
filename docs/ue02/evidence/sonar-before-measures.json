@@ -1,0 +1,30 @@
+{
+  "component": {
+    "id": "AaIDwP9vzDYpeCwXGxde",
+    "key": "AdemolaBTheG_ci-cd-uebung-Bello",
+    "name": "ci-cd-uebung",
+    "description": "\u00dcbung 1: Java-Basisprojekt f\u00fcr CI/CD Kurs",
+    "qualifier": "TRK",
+    "measures": [
+      {
+        "metric": "coverage",
+        "value": "56.3",
+        "bestValue": false
+      },
+      {
+        "metric": "bugs",
+        "value": "1",
+        "bestValue": false
+      },
+      {
+        "metric": "alert_status",
+        "value": "OK"
+      },
+      {
+        "metric": "code_smells",
+        "value": "0",
+        "bestValue": true
+      }
+    ]
+  }
+}
